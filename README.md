@@ -7,7 +7,7 @@ Estado do código: **v0.8.0**, conferido em **02/10/2026** (`KM.VERSION` em `js/
 
 ## ▶️ Como jogar
 
-**Online:** abra **https://deivityandrade.github.io/reinos-e-mercadores/** no Chrome, Edge ou Firefox. Não precisa instalar nada. No Chrome ou Edge, use "Instalar aplicativo" na barra de endereço quando disponível. O modo offline depende dos arquivos já carregados e armazenados no cache; não há download prévio de todos os assets. Áudio solicitado em streaming (Range) não entra nesse cache. O multijogador online exige conexão.
+**Online:** abra **https://deivityandrade.github.io/ultimo-feudo/** no Chrome, Edge ou Firefox. Não precisa instalar nada. No Chrome ou Edge, use "Instalar aplicativo" na barra de endereço quando disponível. O modo offline depende dos arquivos já carregados e armazenados no cache; não há download prévio de todos os assets. Áudio solicitado em streaming (Range) não entra nesse cache. O multijogador online exige conexão.
 
 **No computador (offline):** Dê dois cliques em **`Jogar.bat`**. Ele liga um pequeno servidor local e abre o jogo no navegador (Chrome, Edge ou Firefox).
 Deixe a janela preta aberta enquanto joga; feche-a para encerrar.

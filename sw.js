@@ -1,7 +1,7 @@
 /* Service worker: permite jogar offline e instalar como aplicativo.
    Código (html/js/css) vem da rede primeiro, para receber atualizações;
    modelos 3D e bibliotecas vêm do cache primeiro (são grandes e não mudam). */
-const CACHE = 'reinos-v2';
+const CACHE = 'ultimo-feudo-v1';
 self.addEventListener('install', (e) => { self.skipWaiting(); });
 self.addEventListener('activate', (e) => { e.waitUntil(caches.keys().then((ks) => Promise.all(ks.filter((k) => k !== CACHE).map((k) => caches.delete(k)))).then(() => self.clients.claim())); });
 self.addEventListener('fetch', (e) => {

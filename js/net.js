@@ -22,7 +22,7 @@
 
     // ---------- salas por código (apresentação pelo ntfy.sh; depois a partida é direta entre os navegadores) ----------
     RELAY: 'https://ntfy.sh/',
-    roomTopic(code) { return 'reinos-mercadores-sala-' + code.toLowerCase(); },
+    roomTopic(code) { return 'ultimo-feudo-sala-' + code.toLowerCase(); },
     post(msg) { return fetch(this.RELAY + this.roomTopic(this.code), { method: 'POST', body: JSON.stringify(msg) }).catch(() => this.status('<div class="warn">Sem conexão com o servidor de salas. Tente o modo manual.</div>')); },
     listen(onMsg) {
       if (this.es) this.es.close();
