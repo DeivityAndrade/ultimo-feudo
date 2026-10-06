@@ -1,0 +1,61 @@
+O Último Feudo
+Copyright (c) 2026 Deivity Andrade. Todos os direitos reservados.
+
+1. O que este aviso cobre
+
+Este aviso se aplica a todo o conteúdo deste repositório que seja de autoria
+do titular, incluindo o código-fonte, a arte gerada por código, os assets em
+assets/own, os textos, as missões, o nome "O Último Feudo" e a identidade
+visual do jogo ("o Material").
+
+2. O que é permitido
+
+- Ver o código neste repositório para leitura e estudo pessoal.
+- Jogar o jogo pela publicação oficial feita pelo titular.
+
+3. O que não é permitido sem autorização prévia e por escrito do titular
+
+- Copiar, reproduzir ou redistribuir o Material, no todo ou em parte.
+- Modificar o Material ou criar obras derivadas dele.
+- Publicar, hospedar ou disponibilizar o jogo, ou versões dele, em qualquer
+  outro endereço, loja ou plataforma.
+- Usar o Material para fins comerciais.
+- Usar o Material para treinar modelos de aprendizado de máquina.
+- Remover ou alterar este aviso.
+
+Este repositório não é software livre nem de código aberto. Estar público não
+concede nenhuma licença além do que está escrito na seção 2 e do que os Termos
+de Serviço do GitHub exigem para repositórios públicos.
+
+4. Material de terceiros
+
+Os itens abaixo não pertencem ao titular e continuam sob as licenças próprias,
+que não são alteradas por este aviso:
+
+- Three.js (MIT): js/vendor/three/LICENSE
+- KayKit (CC0): assets/kaykit/LICENSE_characters.txt e
+  assets/kaykit/LICENSE_medieval.txt
+- Quaternius (CC0): assets/quaternius/chars/LICENSE_quaternius.txt e
+  assets/quaternius/props/LICENSE_quaternius.txt
+- Modelo de cavalo: assets/horse/LICENSE.txt
+- Músicas e efeitos sonoros (CC0): assets/audio/CREDITS.txt e
+  assets/audio/sfx/LICENSE_kenney.txt
+
+5. Sem garantia
+
+O Material é fornecido "como está", sem garantia de qualquer tipo. O titular
+não responde por danos decorrentes do uso do jogo ou do acesso a este
+repositório.
+
+6. Pedidos de autorização
+
+Abra uma issue em https://github.com/DeivityAndrade/ultimo-feudo/issues ou
+fale com o titular pelo perfil https://github.com/DeivityAndrade.
+
+---
+
+English summary: Copyright (c) 2026 Deivity Andrade. All rights reserved. This
+repository is source-available for reading only. No permission is granted to
+copy, modify, redistribute, host, sell or otherwise use this material without
+prior written consent from the copyright holder. Third-party components keep
+their own licenses, listed in section 4.
