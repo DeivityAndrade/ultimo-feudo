@@ -790,7 +790,10 @@
       $('#endscreen').addEventListener('click', (e) => {
         const b = e.target.closest('button');
         if (!b) return;
-        if (b.dataset.cont) { $('#endscreen').classList.add('hidden'); KM.S.over = 'ignored'; }
+        if (b.dataset.cont) {
+          $('#endscreen').classList.add('hidden'); KM.S.over = 'ignored';
+          if (KM.analytics) KM.analytics.start(KM.S, 'continue');
+        }
         if (b.dataset.menu) KM.quitToMenu();
         if (b.dataset.next) KM.startGame({ mission: b.dataset.next, diff: KM.S.diff });
         if (b.dataset.retry) KM.startGame({ mission: KM.S.mission, diff: KM.S.diff });
@@ -913,6 +916,7 @@
       S.hist.t.pop(); S.hist.d.forEach((r) => r.pop());
     },
     showEnd(res) {
+      if (KM.analytics) KM.analytics.finish(res);
       const S = KM.S, el = $('#endscreen');
       if (!S.hist || !S.hist.t.length || S.hist.t[S.hist.t.length - 1] < S.time - 5) KM.recordHist(S);
       const nextId = res === 'win' ? KM.nextMission(S.mission) : null, next = nextId && KM.findMission(nextId, S.diff);

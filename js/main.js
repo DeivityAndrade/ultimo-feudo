@@ -104,6 +104,7 @@
     const now = ts / 1000;
     const el = Math.min(0.25, now - (last || now));
     last = now;
+    if (KM.analytics) KM.analytics.update();
     const S = KM.S;
     if (S && !S.editor) {
       KM.simS = S;
@@ -119,7 +120,8 @@
     requestAnimationFrame(frame);
   }
 
-  KM.afterLoad = function (S) {
+  KM.afterLoad = function (S, source) {
+    if (KM.analytics) KM.analytics.finish('replaced');
     KM.S = S; KM.simS = S;
     S.resourceFlow = S.resourceFlow || { since: S.time, events: [] };
     KM.setMapSize(S.map.W, S.map.H);
@@ -140,6 +142,7 @@
     KM.R.dist = 18; KM.R.yaw = 0; KM.R.pitch = 0.9;
     KM.R.centerOn(p.x, p.y);
     acc = 0; autosaveT = 0;
+    if (KM.analytics) KM.analytics.start(S, source);
   };
 
   KM.startGame = function (opts) {
@@ -158,6 +161,7 @@
   };
 
   KM.quitToMenu = function () {
+    if (KM.analytics) KM.analytics.finish('menu');
     if (KM.net && KM.net.active) KM.net.close();
     KM.S = null; KM.simS = null; KM.me = 0;
     KM.tutorial.hide();
@@ -198,7 +202,7 @@
       });
       if (S.over === 'win' || S.over === 'lose') S.over = null;
       KM.me = 0;
-      KM.afterLoad(S);
+      KM.afterLoad(S, 'load');
       return true;
     } catch (e) { KM.ui.toast('Falha ao carregar: ' + e.message, 'danger'); return false; }
   };

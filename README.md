@@ -80,7 +80,15 @@ Com Node.js disponível, execute `node tools/check.js` para verificar regras de 
 
 ## Estatísticas de acesso
 
-O `index.html` carrega o Google Analytics 4 com o ID de medição `G-KX6FD4BVTY` somente em `https://deivityandrade.github.io/ultimo-feudo/`. A integração registra visualizações e permite medir usuários, sessões e tempo de interação pelas métricas automáticas do GA4. Execuções locais e outras prévias não carregam a tag. Eventos específicos de partidas ainda não estão instrumentados.
+O `index.html` carrega o Google Analytics 4 com o ID de medição `G-KX6FD4BVTY` somente em `https://deivityandrade.github.io/ultimo-feudo/`. A integração registra visualizações e permite medir usuários, sessões e tempo de interação pelas métricas automáticas do GA4. Execuções locais e outras prévias não carregam a tag.
+
+### Tempo dentro das partidas
+
+`js/analytics.js` envia `game_start` ao iniciar/carregar uma partida, `game_play_time` a cada 30 segundos de tempo medido (e ao interromper a medição), e `game_end` ao vencer, perder, sair, substituir a partida ou fechar a página. O tempo é real, independente da velocidade da simulação, e conta somente a partida sem pausa com a página visível e em foco. Menu principal, briefing pausado, editor e segundo plano não contam. Continuar após uma vitória ou restaurar a página pelo histórico inicia um novo trecho de jogo. A medição não prova interação contínua com mouse/teclado; se a partida continuar em foco, o tempo conta.
+
+No GA4, crie em **Administrador → Definições personalizadas → Métricas personalizadas** a métrica **Tempo jogado**, parâmetro `play_time_seconds`, unidade **Segundos**. A soma dessa métrica representa o tempo jogado enviado nos intervalos, sem duplicar os totais de encerramento. Opcionalmente, crie **Tempo por trecho encerrado**, parâmetro `session_play_seconds`, unidade **Segundos**, para analisar os totais de `game_end`. Não some as duas métricas. Para comparar modos/fases, registre as dimensões de evento `game_mode`, `mission_id`, `difficulty`, `entry_source` e `end_reason`.
+
+Use **Analisar → Formato livre** para adicionar **Tempo jogado**, **Usuários ativos** e dimensões desejadas. Para uma média por usuário no mesmo período, divida o tempo total pelos usuários correspondentes. `game_start` inclui partidas retomadas e continuações; sua contagem não representa somente partidas novas. Fechamentos abruptos/bloqueadores ou falhas de rede podem impedir envios; os intervalos reduzem a perda. Os dados são coletados a partir da publicação, sem recuperar partidas anteriores. Verifique o temporizador com `node tools/analytics-check.js`.
 
 Após publicar a alteração, abra o site e confira o relatório **Tempo real** na propriedade correspondente em https://analytics.google.com/. Os relatórios consolidados podem levar até 48 horas para atualizar; a integração não recupera acessos anteriores à instalação.
 
