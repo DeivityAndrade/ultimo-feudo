@@ -78,6 +78,12 @@ Deixe a janela preta aberta enquanto joga; feche-a para encerrar.
 ## 🧪 Ferramenta de balanceamento
 Com Node.js disponível, execute `node tools/check.js` para verificar regras de combate, IA, tutorial, objetivos, inicialização das 25 missões/fases em três dificuldades e continuidade após salvar/carregar. `node tools/check.js --balance` também simula três mapas por até 40 minutos cada. São amostras de diagnóstico, não uma estimativa da taxa de vitória de jogadores humanos. `node tools/net-check.js` testa o multijogador (repasse das jogadas entre 4 jogadores, sala cheia e queda de jogador) sem navegador.
 
+## Estatísticas de acesso
+
+O `index.html` carrega o Google Analytics 4 com o ID de medição `G-KX6FD4BVTY` somente em `https://deivityandrade.github.io/ultimo-feudo/`. A integração registra visualizações e permite medir usuários, sessões e tempo de interação pelas métricas automáticas do GA4. Execuções locais e outras prévias não carregam a tag. Eventos específicos de partidas ainda não estão instrumentados.
+
+Após publicar a alteração, abra o site e confira o relatório **Tempo real** na propriedade correspondente em https://analytics.google.com/. Os relatórios consolidados podem levar até 48 horas para atualizar; a integração não recupera acessos anteriores à instalação.
+
 Verificação local em **02/10/2026**, com **Node.js v24.19.0**: `node tools/check.js` passou em **25 grupos**, e `node tools/net-check.js` em **4 grupos**. Os testes usam simulação e canais falsos; não validam conexões WebRTC reais, o serviço de encontro, gráficos, toque ou instalação PWA. Não há workflow de CI no repositório. Nesta revisão documental, `--balance` não foi executado.
 
 Para conferir visualmente cada fase sem desbloquear a Conquista, abra `tools/playtest.html` no servidor local. A prévia começa pausada e não faz autosave. Ela permite examinar briefing, mapa e pontos estratégicos.

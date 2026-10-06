@@ -4,6 +4,23 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <title>O Último Feudo</title>
+  <!-- Google Analytics: mede somente o site publicado, sem incluir testes locais. -->
+  <script>
+    (() => {
+      if (location.hostname !== 'deivityandrade.github.io' ||
+          !/^\/ultimo-feudo(?:\/|$)/.test(location.pathname)) return;
+
+      window.dataLayer = window.dataLayer || [];
+      window.gtag = function () { window.dataLayer.push(arguments); };
+      window.gtag('js', new Date());
+      window.gtag('config', 'G-KX6FD4BVTY');
+
+      const tag = document.createElement('script');
+      tag.async = true;
+      tag.src = 'https://www.googletagmanager.com/gtag/js?id=G-KX6FD4BVTY';
+      document.head.appendChild(tag);
+    })();
+  </script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;900&family=Alegreya+Sans:wght@400;500;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
