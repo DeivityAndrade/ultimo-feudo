@@ -19,7 +19,8 @@
   function flush() {
     if (!session || session.pending < 1) return;
     send('game_play_time', Object.assign({}, session.params, {
-      play_time_seconds: seconds(session.pending)
+      play_time_seconds: seconds(session.pending),
+      play_time_minutes: seconds(session.pending) / 60
     }));
     session.pending = 0;
   }
@@ -55,7 +56,8 @@
       this.update();
       flush();
       send('game_end', Object.assign({}, session.params, {
-        end_reason: reason, session_play_seconds: seconds(session.total)
+        end_reason: reason, session_play_seconds: seconds(session.total),
+        session_play_minutes: seconds(session.total) / 60
       }));
       session = null;
     }

@@ -43,6 +43,7 @@ check('Conta tempo real sem multiplicar pela velocidade e exclui pausa/segundo p
   b.wait(10000); assert.equal(b.total(), 0); // briefing
   S.paused = false; b.KM.analytics.update(); b.wait(30000);
   assert.equal(b.total(), 30);
+  assert.equal(b.events.at(-1).params.play_time_minutes, 0.5);
   S.paused = true; b.KM.analytics.update(); b.wait(10000);
   S.paused = false; b.KM.analytics.update(); b.wait(5000);
   b.focus(false); b.wait(10000); b.focus(true); b.wait(5000);
@@ -50,6 +51,10 @@ check('Conta tempo real sem multiplicar pela velocidade e exclui pausa/segundo p
   b.KM.analytics.finish('menu');
   assert.equal(b.total(), 45);
   assert.equal(b.events.at(-1).params.session_play_seconds, 45);
+  assert.equal(b.events.at(-1).params.session_play_minutes, 0.75);
+  const minutes = b.events.filter((e) => e.name === 'game_play_time')
+    .reduce((sum, e) => sum + e.params.play_time_minutes, 0);
+  assert.ok(Math.abs(minutes - 0.75) < 1e-10);
   assert.equal(b.events[0].params.game_mode, 'conquest');
 });
 
