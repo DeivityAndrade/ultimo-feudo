@@ -204,6 +204,8 @@ O jogo começa só com o básico: **Armazém, Escola, Lenhador e Pedreira**, e o
 - **Sons e música procedurais** com volume pela distância da câmera e panorâmica estéreo.
 
 ## 📦 Créditos e licenças
+**© 2026 Deivity Andrade. Todos os direitos reservados.** O código, a arte própria, os textos e o nome do jogo não podem ser copiados, modificados, redistribuídos ou usados sem autorização por escrito. O repositório é público apenas para leitura; não é software livre. Os termos estão em [LICENSE](LICENSE). Os componentes de terceiros abaixo seguem as licenças próprias.
+
 - Músicas: **RandomMind** (OpenGameArt): The Bard's Tale, Minstrel Dance, Market Day, Harvest Season, Battle e Victory Theme. Efeitos: **Kenney – RPG Audio** (kenney.nl). Detalhes em `assets/audio/CREDITS.txt`.
 - Construções, natureza, texturas e efeitos: **arte própria** gerada por código (`js/art.js`)
 - Personagens, roupas, cabelos, barbas e animações: **Quaternius**, CC0; integração e peças adicionais próprias em `js/people.js`. Espada, machado, picareta, escudo e texturas vêm do **Fantasy Props MegaKit**, também de Quaternius.
